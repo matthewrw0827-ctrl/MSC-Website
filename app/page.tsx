@@ -67,7 +67,7 @@ export default function HomePage() {
               className="text-lg sm:text-2xl font-serif font-bold text-white"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.8)" }}
             >
-              Mosaic Sport Capital
+              Mosaic Sport Capital LLC
             </h1>
           </div>
         </div>
@@ -211,7 +211,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Who We Are</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6">
-              Mosaic Sport Capital is a private advisory boutique dedicated to facilitating strategic ownership in Israeli football. Founded by American Jewish entrepreneurs with a shared commitment to Israel, sport, and investment, we work with individuals who view club ownership as a long-term investment in both identity and
+              Mosaic Sport Capital LLC is a private advisory boutique dedicated to facilitating strategic ownership in Israeli football. Founded by American Jewish entrepreneurs with a shared commitment to Israel, sport, and investment, we work with individuals who view club ownership as a long-term investment in both identity and
               infrastructure, one that strengthens Israeli sport as a whole. Our mission is to foster meaningful
               connections between global Jewish capital and enduring institutions in Israel, building vehicles for
               legacy, alignment, and sustained impact.
@@ -505,7 +505,7 @@ export default function HomePage() {
       <footer className="py-12 px-6 bg-muted border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-muted-foreground">
-            Mosaic Sport Capital is a private advisory firm. Inquiries and engagements are handled discreetly and by
+            Mosaic Sport Capital LLC is a private advisory firm. Inquiries and engagements are handled discreetly and by
             invitation.
           </p>
         </div>
