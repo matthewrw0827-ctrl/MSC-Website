@@ -108,6 +108,7 @@ export default function HomePage() {
           overflow: "hidden",
         }}
       >
+        {/* Desktop Video */}
         <video
           autoPlay
           muted
@@ -124,7 +125,7 @@ export default function HomePage() {
           disableRemotePlayback
           playsinline="true"
           data-setup="{}"
-          className="video-background"
+          className="video-background hidden sm:block"
           style={{
             position: "absolute",
             top: 0,
@@ -145,6 +146,23 @@ export default function HomePage() {
           />
           <span style={{ color: "#F7F6F3" }}>Your browser does not support the video tag.</span>
         </video>
+        
+        {/* Mobile Static Image */}
+        <div
+          className="block sm:hidden"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage: "url('/tel-aviv-coastline-new.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "40% center",
+            backgroundRepeat: "no-repeat",
+            zIndex: 1,
+          }}
+        />
         <div
           style={{
             position: "absolute",
