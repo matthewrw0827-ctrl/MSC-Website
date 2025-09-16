@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export default function HomePage() {
   useEffect(() => {
@@ -43,6 +43,55 @@ export default function HomePage() {
       document.addEventListener("click", handleUserInteraction)
     }
   }, [])
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        const errorData = await response.json()
+        setSubmitStatus('error')
+        setErrorMessage(errorData.error || 'Failed to send message')
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      setErrorMessage('Network error. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -399,7 +448,23 @@ export default function HomePage() {
           </div>
 
           <div className="bg-background/50 backdrop-blur-sm p-8 rounded-xl border border-border/50">
-            <form className="space-y-6">
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <p className="text-green-800 font-medium">
+                  ✓ Message sent successfully! We'll get back to you soon.
+                </p>
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-800 font-medium">
+                  ✗ {errorMessage}
+                </p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -409,6 +474,9 @@ export default function HomePage() {
                     type="text"
                     id="name"
                     name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     placeholder="Your full name"
                   />
@@ -421,6 +489,9 @@ export default function HomePage() {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     placeholder="your@email.com"
                   />
@@ -435,6 +506,9 @@ export default function HomePage() {
                   type="text"
                   id="subject"
                   name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                   placeholder="What would you like to discuss?"
                 />
@@ -447,6 +521,9 @@ export default function HomePage() {
                 <textarea
                   id="message"
                   name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
                   rows={6}
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
                   placeholder="We look forward to your message..."
@@ -456,9 +533,10 @@ export default function HomePage() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  disabled={isSubmitting}
+                  className="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
             </form>
