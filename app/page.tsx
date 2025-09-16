@@ -42,18 +42,18 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <header className="absolute top-0 left-0 z-50 p-6">
-        <div className="flex items-center gap-4">
-          <div className="w-20 h-20 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-md border border-white/30 shadow-lg">
+      <header className="absolute top-0 left-0 z-50 p-3 sm:p-6">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-md border border-white/30 shadow-lg">
             <img 
               src="/Mosaic Logo.png" 
               alt="Mosaic Sport Capital Logo" 
-              className="w-19 h-19 object-contain drop-shadow-lg"
+              className="w-10 h-10 sm:w-14 sm:h-14 object-contain drop-shadow-lg"
             />
           </div>
           <div>
             <h1
-              className="text-2xl font-serif font-bold text-white"
+              className="text-lg sm:text-2xl font-serif font-bold text-white"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.8)" }}
             >
               Mosaic Sport Capital
@@ -62,28 +62,28 @@ export default function HomePage() {
         </div>
       </header>
 
-      <nav className="absolute top-0 right-0 z-50 p-6">
-        <div className="flex items-center gap-4">
+      <nav className="absolute top-0 right-0 z-50 p-3 sm:p-6">
+        <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={() => scrollToSection("about")}
-            className="text-white font-medium hover:text-accent transition-colors"
+            className="text-white font-medium hover:text-accent transition-colors text-sm sm:text-base"
             style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
           >
             About
           </button>
           <button
             onClick={() => scrollToSection("approach")}
-            className="text-white font-medium hover:text-accent transition-colors"
+            className="text-white font-medium hover:text-accent transition-colors text-sm sm:text-base"
             style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
           >
             Approach
           </button>
           <button
             onClick={() => scrollToSection("contact")}
-            className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-white font-medium hover:bg-white/30 transition-all"
+            className="bg-white/20 backdrop-blur-sm px-2 py-1 sm:px-4 sm:py-2 rounded-lg text-white font-medium hover:bg-white/30 transition-all text-sm sm:text-base"
             style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
           >
-            Contact Us
+            Contact
           </button>
         </div>
       </nav>
@@ -103,9 +103,12 @@ export default function HomePage() {
           loop
           playsInline
           controls={false}
-          preload="auto"
+          preload="metadata"
           poster="/tel-aviv-coastline-new.jpg"
           webkit-playsinline="true"
+          x5-video-player-type="h5"
+          x5-video-player-fullscreen="true"
+          x5-video-orientation="portraint"
           style={{
             position: "absolute",
             top: 0,
@@ -147,14 +150,15 @@ export default function HomePage() {
         >
           <h1
             style={{
-              fontSize: "clamp(2.5rem, 6vw, 4rem)",
+              fontSize: "clamp(1.8rem, 5vw, 4rem)",
               margin: 0,
               color: "#FFFFFF",
               fontWeight: "bold",
               lineHeight: "1.1",
-              marginBottom: "2rem",
+              marginBottom: "1.5rem",
               letterSpacing: "-0.02em",
               textShadow: "2px 4px 12px rgba(0,0,0,0.8), 0px 2px 4px rgba(0,0,0,0.6)",
+              padding: "0 1rem",
             }}
           >
             Connecting the diaspora to Israeli football.
