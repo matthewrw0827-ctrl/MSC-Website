@@ -111,6 +111,9 @@ export default function HomePage() {
           x5-video-orientation="portraint"
           disablePictureInPicture
           disableRemotePlayback
+          playsinline="true"
+          data-setup="{}"
+          className="video-background"
           style={{
             position: "absolute",
             top: 0,
@@ -118,7 +121,11 @@ export default function HomePage() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
+            objectPosition: "25% center",
             zIndex: 1,
+            pointerEvents: "none",
+            outline: "none",
+            border: "none",
           }}
         >
           <source
