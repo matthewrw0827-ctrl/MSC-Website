@@ -62,7 +62,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      <nav className="absolute top-0 right-0 z-50 p-3 sm:p-6">
+      <nav className="absolute top-0 right-0 z-50 p-3 sm:p-6 hidden sm:block">
         <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={() => scrollToSection("about")}
@@ -103,12 +103,14 @@ export default function HomePage() {
           loop
           playsInline
           controls={false}
-          preload="metadata"
+          preload="auto"
           poster="/tel-aviv-coastline-new.jpg"
           webkit-playsinline="true"
           x5-video-player-type="h5"
           x5-video-player-fullscreen="true"
           x5-video-orientation="portraint"
+          disablePictureInPicture
+          disableRemotePlayback
           style={{
             position: "absolute",
             top: 0,
