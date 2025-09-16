@@ -11,17 +11,17 @@ export default function HomePage() {
       video.controls = false
       video.setAttribute("webkit-playsinline", "true")
       video.setAttribute("playsinline", "true")
+      video.setAttribute("muted", "true")
+      video.muted = true
 
       // Force play with multiple attempts
-      const attemptPlay = () => {
-        video.play().catch(() => {
-          // If first attempt fails, try again after a short delay
-          setTimeout(() => {
-            video.play().catch(() => {
-              console.log("Video autoplay blocked by browser")
-            })
-          }, 100)
-        })
+      const attemptPlay = async () => {
+        try {
+          await video.play()
+          console.log("Video playing successfully")
+        } catch (error) {
+          console.log("Video autoplay blocked by browser")
+        }
       }
 
       // Try to play immediately
@@ -30,6 +30,17 @@ export default function HomePage() {
       // Also try when video metadata loads
       video.addEventListener("loadedmetadata", attemptPlay)
       video.addEventListener("canplay", attemptPlay)
+      video.addEventListener("loadeddata", attemptPlay)
+      
+      // Try on user interaction (mobile workaround)
+      const handleUserInteraction = () => {
+        attemptPlay()
+        document.removeEventListener("touchstart", handleUserInteraction)
+        document.removeEventListener("click", handleUserInteraction)
+      }
+      
+      document.addEventListener("touchstart", handleUserInteraction)
+      document.addEventListener("click", handleUserInteraction)
     }
   }, [])
 
@@ -121,7 +132,7 @@ export default function HomePage() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: "25% center",
+            objectPosition: "40% center",
             zIndex: 1,
             pointerEvents: "none",
             outline: "none",
