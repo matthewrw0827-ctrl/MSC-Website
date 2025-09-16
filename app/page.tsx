@@ -543,9 +543,9 @@ export default function HomePage() {
 
             <div className="mt-8 pt-8 border-t border-border text-center">
               <p className="text-muted-foreground mb-4">Or reach us directly:</p>
-              <div className="space-y-2">
+              <div>
                 <a
-                  href="mailto:dan.mezistrano@mosaicsportcapital.com"
+                  href="mailto:contact@mosaicsportcapital.com"
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -556,22 +556,7 @@ export default function HomePage() {
                       d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  dan.mezistrano@mosaicsportcapital.com
-                </a>
-                <br />
-                <a
-                  href="mailto:matthew.walzer@mosaicsportcapital.com"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  matthew.walzer@mosaicsportcapital.com
+                  contact@mosaicsportcapital.com
                 </a>
               </div>
             </div>
