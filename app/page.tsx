@@ -44,9 +44,12 @@ export default function HomePage() {
     <div className="min-h-screen">
       <header className="absolute top-0 left-0 z-50 p-6">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-white/20 rounded-md flex items-center justify-center">
-            {/* Logo placeholder - user can add logo here */}
-            <div className="w-8 h-8 bg-white/40 rounded"></div>
+          <div className="w-20 h-20 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-md border border-white/30 shadow-lg">
+            <img 
+              src="/Mosaic Logo.png" 
+              alt="Mosaic Sport Capital Logo" 
+              className="w-19 h-19 object-contain drop-shadow-lg"
+            />
           </div>
           <div>
             <h1
