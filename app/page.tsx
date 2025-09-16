@@ -224,10 +224,13 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="bg-background/50 p-8 rounded-xl border border-border/50 backdrop-blur-sm">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-serif font-bold text-white bg-primary w-full h-full rounded-full flex items-center justify-center">
-                    D
-                  </span>
+                <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                  <img 
+                    src="/DanPhoto.jpg" 
+                    alt="Daniel Mezistrano" 
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: "center 25%" }}
+                  />
                 </div>
                 <div>
                   <h3 className="text-2xl font-serif font-bold text-foreground mb-2">Daniel Mezistrano</h3>
