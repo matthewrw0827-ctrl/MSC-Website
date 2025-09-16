@@ -242,7 +242,7 @@ export default function HomePage() {
                 and Jewish, Islamic & Middle Eastern Studies. He brings significant leadership experience within the
                 global Jewish community, having served as Aleph Godol (International President) of BBYO and engaging
                 with a plethora of Jewish non-profit organizations including JNF, AIPAC, ADL and more. His work sits at
-                the intersection of Pluralistic Jewish engagement, institutional strategy, and community capital. He
+                the intersection of pluralistic Jewish engagement, institutional strategy, and community capital. He
                 approaches every deal through the lens of alignment, development, and long-term cultural fit shaped by
                 deep-rooted perspective.
               </p>
