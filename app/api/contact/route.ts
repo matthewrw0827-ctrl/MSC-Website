@@ -31,6 +31,10 @@ export async function POST(request: NextRequest) {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      tls: {
+        ciphers: 'SSLv3',
+        rejectUnauthorized: false
+      }
     })
 
     // Email content
@@ -91,8 +95,12 @@ From: Mosaic Sport Capital Contact Form
 
   } catch (error) {
     console.error('Error sending email:', error)
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined
+    })
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to send email. Please check server logs for details.' },
       { status: 500 }
     )
   }
