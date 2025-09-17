@@ -144,6 +144,22 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
   }
+  
+  /* Prevent layout shifts and rendering issues */
+  .group:hover .group-hover\:bg-primary\/20 {
+    background-color: rgb(52 73 94 / 0.2);
+  }
+  
+  /* Ensure smooth hover states */
+  .hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  /* Fix any potential backdrop-blur issues */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
   body {
     @apply bg-background text-foreground font-sans;
   }
