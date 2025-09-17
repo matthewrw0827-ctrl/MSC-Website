@@ -108,6 +108,8 @@ async function sendEmail(name: string, email: string, subject: string, message: 
     }
 
     console.log('Email sent successfully via Graph API')
+    console.log('Sent from:', fromEmail)
+    console.log('Sent to:', recipients)
     return { success: true, message: 'Email sent successfully via Graph API' }
 
   } catch (error) {
@@ -136,6 +138,15 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+
+    // Debug: Log environment variables (without secrets)
+    console.log('Environment check:')
+    console.log('EMAIL_USER:', process.env.EMAIL_USER)
+    console.log('EMAIL_FROM:', process.env.EMAIL_FROM)
+    console.log('EMAIL_TO:', process.env.EMAIL_TO)
+    console.log('OAUTH_CLIENT_ID:', process.env.OAUTH_CLIENT_ID ? 'Set' : 'Missing')
+    console.log('OAUTH_CLIENT_SECRET:', process.env.OAUTH_CLIENT_SECRET ? 'Set' : 'Missing')
+    console.log('OAUTH_TENANT_ID:', process.env.OAUTH_TENANT_ID)
 
     // Send email using the simple function
     const result = await sendEmail(name, email, subject, message)
