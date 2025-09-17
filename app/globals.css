@@ -123,6 +123,27 @@
   * {
     @apply border-border outline-ring/50;
   }
+  
+  /* Fix rendering issues with popups and tooltips */
+  [data-radix-portal] {
+    z-index: 9999;
+  }
+  
+  /* Prevent flash of unstyled content */
+  [data-state="open"] {
+    animation-fill-mode: both;
+  }
+  
+  [data-state="closed"] {
+    animation-fill-mode: both;
+  }
+  
+  /* Smooth transitions for better UX */
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
   body {
     @apply bg-background text-foreground font-sans;
   }
