@@ -6,82 +6,52 @@ Add these environment variables in your Vercel dashboard:
 
 ```env
 # Email Configuration
-EMAIL_USER=your-email@domain.com
+EMAIL_USER=matthew.walzer@mosaicsportcapital.com
 EMAIL_FROM=contact@mosaicsportcapital.com
 EMAIL_TO=matthew.walzer@mosaicsportcapital.com,dan.mezistrano@mosaicsportcapital.com
 
-# OAuth2 Credentials (works with Gmail or Office 365)
-# If these are not set, it will fallback to basic SMTP auth
-OAUTH_CLIENT_ID=your-oauth-client-id
-OAUTH_CLIENT_SECRET=your-oauth-client-secret
-OAUTH_REFRESH_TOKEN=your-refresh-token
-OAUTH_ACCESS_TOKEN=your-access-token
+# Office 365 OAuth2 Credentials (Client Credentials Flow)
+OAUTH_CLIENT_ID=your-azure-app-client-id
+OAUTH_CLIENT_SECRET=your-azure-app-client-secret
+OAUTH_TENANT_ID=your-azure-tenant-id
 
 # Fallback SMTP credentials (if OAuth2 not configured)
 EMAIL_PASS=your-app-password
-
-# Optional: Email Service Configuration
-EMAIL_SERVICE=gmail  # or leave empty for Gmail
-EMAIL_HOST=smtp.office365.com  # For Office 365
-EMAIL_PORT=587  # For Office 365
-EMAIL_SECURE=false  # For Office 365
 ```
 
-## How to Get OAuth2 Credentials
+## How to Get Office 365 OAuth2 Credentials
 
-### Option 1: Gmail OAuth2
-
-#### 1. Google Cloud Console Setup
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select existing
-3. Enable Gmail API
-4. Go to "Credentials" → "Create Credentials" → "OAuth 2.0 Client ID"
-5. Set application type to "Web application"
-6. Add authorized redirect URIs: `https://yourdomain.com/api/auth/callback`
-7. Copy Client ID and Client Secret
-
-#### 2. Generate Refresh Token
-Use this script to generate refresh token:
-
-```javascript
-const { google } = require('googleapis');
-
-const oauth2Client = new google.auth.OAuth2(
-  'YOUR_CLIENT_ID',
-  'YOUR_CLIENT_SECRET',
-  'https://yourdomain.com/api/auth/callback'
-);
-
-const authUrl = oauth2Client.generateAuthUrl({
-  access_type: 'offline',
-  scope: ['https://www.googleapis.com/auth/gmail.send']
-});
-
-console.log('Authorize this app by visiting this url:', authUrl);
-```
-
-#### 3. Alternative: Use OAuth2 Playground
-1. Go to [OAuth2 Playground](https://developers.google.com/oauthplayground/)
-2. Select Gmail API v1 → `https://www.googleapis.com/auth/gmail.send`
-3. Authorize and get refresh token
-
-### Option 2: Office 365 OAuth2
-
-#### 1. Azure App Registration
+### 1. Azure App Registration
 1. Go to [Azure Portal](https://portal.azure.com/)
 2. Navigate to "Azure Active Directory" → "App registrations"
 3. Click "New registration"
-4. Set redirect URI: `https://yourdomain.com/api/auth/callback`
-5. Note down Application (client) ID and create a client secret
+4. Name: "Mosaic Contact Form"
+5. Supported account types: "Accounts in this organizational directory only"
+6. Redirect URI: Leave empty (not needed for client credentials flow)
+7. Click "Register"
 
-#### 2. API Permissions
+### 2. Get Client ID and Tenant ID
+1. Copy the "Application (client) ID" - this is your `OAUTH_CLIENT_ID`
+2. Copy the "Directory (tenant) ID" - this is your `OAUTH_TENANT_ID`
+
+### 3. Create Client Secret
+1. Go to "Certificates & secrets" → "New client secret"
+2. Description: "Contact Form Secret"
+3. Expires: "24 months"
+4. Copy the secret value - this is your `OAUTH_CLIENT_SECRET`
+
+### 4. API Permissions (Application Permissions)
 1. Go to "API permissions" → "Add a permission"
 2. Select "Microsoft Graph" → "Application permissions"
-3. Add "Mail.Send" permission
-4. Grant admin consent
+3. Add these permissions:
+   - `Mail.Send` (Application permission)
+4. Click "Grant admin consent" (requires admin privileges)
 
-#### 3. Generate Tokens
-Use Microsoft Graph API to generate access and refresh tokens for your application.
+### 5. Test the Setup
+The system will automatically:
+- Use client credentials flow to get access tokens
+- No manual token generation needed
+- Tokens are refreshed automatically as needed
 
 ## Security Notes
 - ✅ No passwords stored in code

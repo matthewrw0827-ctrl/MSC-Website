@@ -3,73 +3,93 @@ import { NextRequest, NextResponse } from 'next/server'
 // Ensure this runs on Node.js runtime
 export const runtime = 'nodejs'
 
-export async function POST(request: NextRequest) {
+// Get access token using client credentials flow
+async function getAccessToken() {
   try {
-    const { name, email, subject, message } = await request.json()
+    const tokenUrl = `https://login.microsoftonline.com/${process.env.OAUTH_TENANT_ID}/oauth2/v2.0/token`
+    
+    const params = new URLSearchParams({
+      client_id: process.env.OAUTH_CLIENT_ID!,
+      client_secret: process.env.OAUTH_CLIENT_SECRET!,
+      scope: 'https://graph.microsoft.com/.default',
+      grant_type: 'client_credentials'
+    })
 
-    // Validate required fields
-    if (!name || !email || !subject || !message) {
-      return NextResponse.json(
-        { error: 'All fields are required' },
-        { status: 400 }
-      )
+    const response = await fetch(tokenUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: params
+    })
+
+    if (!response.ok) {
+      throw new Error(`Token request failed: ${response.status} ${response.statusText}`)
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      )
-    }
+    const tokenData = await response.json()
+    return tokenData.access_token
+  } catch (error) {
+    console.error('Error getting access token:', error)
+    throw error
+  }
+}
 
-    // Dynamic import for nodemailer to fix ES module issues
-    const nodemailer = await import('nodemailer')
+// Email sending using nodemailer with Office 365 OAuth2
+async function sendEmail(name: string, email: string, subject: string, message: string) {
+  try {
+    // Dynamic import to avoid ES module issues
+    const nodemailer = (await import('nodemailer')).default
     
     // Check if OAuth2 credentials are available
-    const hasOAuth2 = process.env.OAUTH_CLIENT_ID && process.env.OAUTH_CLIENT_SECRET && process.env.OAUTH_REFRESH_TOKEN
+    const hasOAuth2 = process.env.OAUTH_CLIENT_ID && process.env.OAUTH_CLIENT_SECRET && process.env.OAUTH_TENANT_ID
     
     let transporter
     
     if (hasOAuth2) {
-      // Create transporter with OAuth2
-      // Supports both Gmail and Office 365 OAuth2
-      transporter = nodemailer.default.createTransporter({
-        service: process.env.EMAIL_SERVICE || 'gmail',
-        host: process.env.EMAIL_HOST, // For Office 365: smtp.office365.com
-        port: process.env.EMAIL_PORT ? parseInt(process.env.EMAIL_PORT) : undefined,
-        secure: process.env.EMAIL_SECURE === 'true',
+      // Get access token using client credentials flow
+      const accessToken = await getAccessToken()
+      
+      // Create transporter with OAuth2 for Office 365
+      transporter = nodemailer.createTransporter({
+        host: 'smtp.office365.com',
+        port: 587,
+        secure: false, // true for 465, false for other ports
         auth: {
           type: 'OAuth2',
           user: process.env.EMAIL_USER,
           clientId: process.env.OAUTH_CLIENT_ID,
           clientSecret: process.env.OAUTH_CLIENT_SECRET,
-          refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-          accessToken: process.env.OAUTH_ACCESS_TOKEN,
+          accessToken: accessToken,
         },
+        tls: {
+          ciphers: 'SSLv3'
+        }
       })
     } else {
-      // Fallback to basic SMTP (for testing or if OAuth2 not configured)
-      transporter = nodemailer.default.createTransporter({
-        service: process.env.EMAIL_SERVICE || 'gmail',
-        host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-        port: process.env.EMAIL_PORT ? parseInt(process.env.EMAIL_PORT) : 587,
-        secure: process.env.EMAIL_SECURE === 'true',
+      // Fallback to basic SMTP auth
+      transporter = nodemailer.createTransporter({
+        host: 'smtp.office365.com',
+        port: 587,
+        secure: false,
         auth: {
           user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS, // Fallback to password if OAuth2 not available
+          pass: process.env.EMAIL_PASS,
         },
+        tls: {
+          ciphers: 'SSLv3'
+        }
       })
     }
 
-    // Email content
+    const recipients = process.env.EMAIL_TO ? process.env.EMAIL_TO.split(',').map(email => email.trim()) : [
+      'matthew.walzer@mosaicsportcapital.com',
+      'dan.mezistrano@mosaicsportcapital.com'
+    ]
+
     const mailOptions = {
       from: process.env.EMAIL_FROM || process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO ? process.env.EMAIL_TO.split(',').map(email => email.trim()) : [
-        'matthew.walzer@mosaicsportcapital.com',
-        'dan.mezistrano@mosaicsportcapital.com'
-      ],
+      to: recipients,
       subject: `Contact Form: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -112,12 +132,52 @@ From: Mosaic Sport Capital Contact Form
     }
 
     // Send email
-    await transporter.sendMail(mailOptions)
+    const result = await transporter.sendMail(mailOptions)
+    
+    console.log('Email sent successfully:', result.messageId)
+    return { success: true, message: 'Email sent successfully', messageId: result.messageId }
 
-    return NextResponse.json(
-      { message: 'Email sent successfully' },
-      { status: 200 }
-    )
+  } catch (error) {
+    console.error('Nodemailer error:', error)
+    return { success: false, message: 'Failed to send email', error: error }
+  }
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const { name, email, subject, message } = await request.json()
+
+    // Validate required fields
+    if (!name || !email || !subject || !message) {
+      return NextResponse.json(
+        { error: 'All fields are required' },
+        { status: 400 }
+      )
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      )
+    }
+
+    // Send email using the simple function
+    const result = await sendEmail(name, email, subject, message)
+
+    if (result.success) {
+      return NextResponse.json(
+        { message: 'Email sent successfully' },
+        { status: 200 }
+      )
+    } else {
+      return NextResponse.json(
+        { error: 'Failed to send email' },
+        { status: 500 }
+      )
+    }
 
   } catch (error) {
     console.error('Error sending email:', error)
