@@ -271,7 +271,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-background/50 p-8 rounded-xl border border-border/50 backdrop-blur-sm hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-background/50 p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
                   <img 
@@ -312,7 +312,7 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div className="bg-background/50 p-8 rounded-xl border border-border/50 backdrop-blur-sm hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-background/50 p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
                   <span className="text-2xl font-serif font-bold text-white bg-primary w-full h-full rounded-full flex items-center justify-center">
@@ -365,7 +365,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            <div className="bg-card/50 backdrop-blur-sm p-8 rounded-xl border border-border/50 hover:shadow-lg transition-shadow duration-300 h-full">
+            <div className="bg-card/50 p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 h-full">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -384,7 +384,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="bg-card/50 backdrop-blur-sm p-8 rounded-xl border border-border/50 hover:shadow-lg transition-shadow duration-300 h-full">
+            <div className="bg-card/50 p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 h-full">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -409,7 +409,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="bg-card/50 backdrop-blur-sm p-8 rounded-xl border border-border/50 hover:shadow-lg transition-shadow duration-300 h-full">
+            <div className="bg-card/50 p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 h-full">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path

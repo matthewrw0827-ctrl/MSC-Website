@@ -160,6 +160,30 @@
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
   }
+  
+  /* Prevent flickering on hover states */
+  .hover\:shadow-lg {
+    will-change: box-shadow;
+  }
+  
+  .hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transform: translateZ(0);
+  }
+  
+  /* Force hardware acceleration for smooth rendering */
+  .bg-background\/50,
+  .bg-card\/50 {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  /* Prevent layout shifts during transitions */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
   body {
     @apply bg-background text-foreground font-sans;
   }
