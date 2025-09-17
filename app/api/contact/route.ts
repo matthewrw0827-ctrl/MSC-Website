@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
+// Ensure this runs on Node.js runtime
+export const runtime = 'nodejs'
+
 export async function POST(request: NextRequest) {
   try {
     const { name, email, subject, message } = await request.json()
@@ -22,19 +25,21 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Create transporter for Office 365
+    // Create transporter with OAuth2
+    // Supports both Gmail and Office 365 OAuth2
     const transporter = nodemailer.createTransporter({
-      host: process.env.EMAIL_HOST || 'smtp.office365.com',
-      port: parseInt(process.env.EMAIL_PORT || '587'),
-      secure: false, // true for 465, false for other ports
+      service: process.env.EMAIL_SERVICE || 'gmail',
+      host: process.env.EMAIL_HOST, // For Office 365: smtp.office365.com
+      port: process.env.EMAIL_PORT ? parseInt(process.env.EMAIL_PORT) : undefined,
+      secure: process.env.EMAIL_SECURE === 'true',
       auth: {
+        type: 'OAuth2',
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        clientId: process.env.OAUTH_CLIENT_ID,
+        clientSecret: process.env.OAUTH_CLIENT_SECRET,
+        refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+        accessToken: process.env.OAUTH_ACCESS_TOKEN,
       },
-      tls: {
-        ciphers: 'SSLv3',
-        rejectUnauthorized: false
-      }
     })
 
     // Email content
