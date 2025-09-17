@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
+import nodemailer from 'nodemailer'
 
-// Ensure this runs on Node.js runtime
+// Force Node.js runtime - this is critical for nodemailer to work
 export const runtime = 'nodejs'
 
 // Get access token using client credentials flow
@@ -38,9 +39,6 @@ async function getAccessToken() {
 // Email sending using nodemailer with Office 365 OAuth2
 async function sendEmail(name: string, email: string, subject: string, message: string) {
   try {
-    // Dynamic import to avoid ES module issues
-    const nodemailer = (await import('nodemailer')).default
-    
     // Check if OAuth2 credentials are available
     const hasOAuth2 = process.env.OAUTH_CLIENT_ID && process.env.OAUTH_CLIENT_SECRET && process.env.OAUTH_TENANT_ID
     
@@ -51,7 +49,7 @@ async function sendEmail(name: string, email: string, subject: string, message: 
       const accessToken = await getAccessToken()
       
       // Create transporter with OAuth2 for Office 365
-      transporter = nodemailer.createTransporter({
+      transporter = nodemailer.createTransport({
         host: 'smtp.office365.com',
         port: 587,
         secure: false, // true for 465, false for other ports
@@ -68,7 +66,7 @@ async function sendEmail(name: string, email: string, subject: string, message: 
       })
     } else {
       // Fallback to basic SMTP auth
-      transporter = nodemailer.createTransporter({
+      transporter = nodemailer.createTransport({
         host: 'smtp.office365.com',
         port: 587,
         secure: false,
