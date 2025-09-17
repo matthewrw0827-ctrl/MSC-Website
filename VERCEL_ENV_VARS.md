@@ -6,9 +6,9 @@ Add these environment variables in your Vercel dashboard:
 
 ```env
 # Email Configuration
-EMAIL_USER=matthew.walzer@mosaicsportcapital.com
+EMAIL_USER=Matthew.Walzer@mosaicsportcapital.com
 EMAIL_FROM=contact@mosaicsportcapital.com
-EMAIL_TO=matthew.walzer@mosaicsportcapital.com,dan.mezistrano@mosaicsportcapital.com
+EMAIL_TO=Matthew.Walzer@mosaicsportcapital.com,dan.mezistrano@mosaicsportcapital.com
 
 # Office 365 OAuth2 Credentials (Client Credentials Flow)
 OAUTH_CLIENT_ID=your-azure-app-client-id

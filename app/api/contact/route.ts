@@ -42,7 +42,7 @@ async function sendEmail(name: string, email: string, subject: string, message: 
     const accessToken = await getAccessToken()
     
     const recipients = process.env.EMAIL_TO ? process.env.EMAIL_TO.split(',').map(email => email.trim()) : [
-      'matthew.walzer@mosaicsportcapital.com',
+      'Matthew.Walzer@mosaicsportcapital.com',
       'dan.mezistrano@mosaicsportcapital.com'
     ]
 
@@ -103,8 +103,10 @@ async function sendEmail(name: string, email: string, subject: string, message: 
     })
 
     if (!graphResponse.ok) {
-      const errorText = await graphResponse.text()
-      throw new Error(`Graph API request failed: ${graphResponse.status} ${graphResponse.statusText} - ${errorText}`)
+      const err = await graphResponse.text()
+      throw new Error(`Graph sendMail failed: ${graphResponse.status} ${err}`)
+    } else {
+      console.log("Graph sendMail status:", graphResponse.status, "body:", await graphResponse.text())
     }
 
     console.log('Email sent successfully via Graph API')
