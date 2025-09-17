@@ -11,10 +11,14 @@ EMAIL_FROM=contact@mosaicsportcapital.com
 EMAIL_TO=matthew.walzer@mosaicsportcapital.com,dan.mezistrano@mosaicsportcapital.com
 
 # OAuth2 Credentials (works with Gmail or Office 365)
+# If these are not set, it will fallback to basic SMTP auth
 OAUTH_CLIENT_ID=your-oauth-client-id
 OAUTH_CLIENT_SECRET=your-oauth-client-secret
 OAUTH_REFRESH_TOKEN=your-refresh-token
 OAUTH_ACCESS_TOKEN=your-access-token
+
+# Fallback SMTP credentials (if OAuth2 not configured)
+EMAIL_PASS=your-app-password
 
 # Optional: Email Service Configuration
 EMAIL_SERVICE=gmail  # or leave empty for Gmail

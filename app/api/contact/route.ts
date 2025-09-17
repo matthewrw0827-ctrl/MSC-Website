@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
 
 // Ensure this runs on Node.js runtime
 export const runtime = 'nodejs'
@@ -25,22 +24,44 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Create transporter with OAuth2
-    // Supports both Gmail and Office 365 OAuth2
-    const transporter = nodemailer.createTransporter({
-      service: process.env.EMAIL_SERVICE || 'gmail',
-      host: process.env.EMAIL_HOST, // For Office 365: smtp.office365.com
-      port: process.env.EMAIL_PORT ? parseInt(process.env.EMAIL_PORT) : undefined,
-      secure: process.env.EMAIL_SECURE === 'true',
-      auth: {
-        type: 'OAuth2',
-        user: process.env.EMAIL_USER,
-        clientId: process.env.OAUTH_CLIENT_ID,
-        clientSecret: process.env.OAUTH_CLIENT_SECRET,
-        refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-        accessToken: process.env.OAUTH_ACCESS_TOKEN,
-      },
-    })
+    // Dynamic import for nodemailer to fix ES module issues
+    const nodemailer = await import('nodemailer')
+    
+    // Check if OAuth2 credentials are available
+    const hasOAuth2 = process.env.OAUTH_CLIENT_ID && process.env.OAUTH_CLIENT_SECRET && process.env.OAUTH_REFRESH_TOKEN
+    
+    let transporter
+    
+    if (hasOAuth2) {
+      // Create transporter with OAuth2
+      // Supports both Gmail and Office 365 OAuth2
+      transporter = nodemailer.default.createTransporter({
+        service: process.env.EMAIL_SERVICE || 'gmail',
+        host: process.env.EMAIL_HOST, // For Office 365: smtp.office365.com
+        port: process.env.EMAIL_PORT ? parseInt(process.env.EMAIL_PORT) : undefined,
+        secure: process.env.EMAIL_SECURE === 'true',
+        auth: {
+          type: 'OAuth2',
+          user: process.env.EMAIL_USER,
+          clientId: process.env.OAUTH_CLIENT_ID,
+          clientSecret: process.env.OAUTH_CLIENT_SECRET,
+          refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+          accessToken: process.env.OAUTH_ACCESS_TOKEN,
+        },
+      })
+    } else {
+      // Fallback to basic SMTP (for testing or if OAuth2 not configured)
+      transporter = nodemailer.default.createTransporter({
+        service: process.env.EMAIL_SERVICE || 'gmail',
+        host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+        port: process.env.EMAIL_PORT ? parseInt(process.env.EMAIL_PORT) : 587,
+        secure: process.env.EMAIL_SECURE === 'true',
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS, // Fallback to password if OAuth2 not available
+        },
+      })
+    }
 
     // Email content
     const mailOptions = {
