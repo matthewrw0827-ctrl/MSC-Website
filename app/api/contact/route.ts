@@ -91,8 +91,9 @@ async function sendEmail(name: string, email: string, subject: string, message: 
       saveToSentItems: true
     }
 
-    // Send email using Graph API
-    const graphResponse = await fetch('https://graph.microsoft.com/v1.0/users/' + process.env.EMAIL_USER + '/sendMail', {
+    // Send email using Graph API - use the specific from email address
+    const fromEmail = process.env.EMAIL_FROM || process.env.EMAIL_USER
+    const graphResponse = await fetch(`https://graph.microsoft.com/v1.0/users/${fromEmail}/sendMail`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${accessToken}`,
