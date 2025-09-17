@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
 
-// Force Node.js runtime - this is critical for nodemailer to work
+// Force Node.js runtime
 export const runtime = 'nodejs'
 
 // Get access token using client credentials flow
@@ -36,107 +35,82 @@ async function getAccessToken() {
   }
 }
 
-// Email sending using nodemailer with Office 365 OAuth2
+// Email sending using Microsoft Graph API
 async function sendEmail(name: string, email: string, subject: string, message: string) {
   try {
-    // Check if OAuth2 credentials are available
-    const hasOAuth2 = process.env.OAUTH_CLIENT_ID && process.env.OAUTH_CLIENT_SECRET && process.env.OAUTH_TENANT_ID
+    // Get access token
+    const accessToken = await getAccessToken()
     
-    let transporter
-    
-    if (hasOAuth2) {
-      // Get access token using client credentials flow
-      const accessToken = await getAccessToken()
-      
-      // Create transporter with OAuth2 for Office 365
-      transporter = nodemailer.createTransport({
-        host: 'smtp.office365.com',
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        auth: {
-          type: 'OAuth2',
-          user: process.env.EMAIL_USER,
-          clientId: process.env.OAUTH_CLIENT_ID,
-          clientSecret: process.env.OAUTH_CLIENT_SECRET,
-          accessToken: accessToken,
-        },
-        tls: {
-          ciphers: 'SSLv3'
-        }
-      })
-    } else {
-      // Fallback to basic SMTP auth
-      transporter = nodemailer.createTransport({
-        host: 'smtp.office365.com',
-        port: 587,
-        secure: false,
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS,
-        },
-        tls: {
-          ciphers: 'SSLv3'
-        }
-      })
-    }
-
     const recipients = process.env.EMAIL_TO ? process.env.EMAIL_TO.split(',').map(email => email.trim()) : [
       'matthew.walzer@mosaicsportcapital.com',
       'dan.mezistrano@mosaicsportcapital.com'
     ]
 
-    const mailOptions = {
-      from: process.env.EMAIL_FROM || process.env.EMAIL_USER,
-      to: recipients,
-      subject: `Contact Form: ${subject}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
-            New Contact Form Submission
-          </h2>
-          
-          <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #495057; margin-top: 0;">Contact Details</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Subject:</strong> ${subject}</p>
-          </div>
-          
-          <div style="background-color: #ffffff; padding: 20px; border: 1px solid #dee2e6; border-radius: 8px;">
-            <h3 style="color: #495057; margin-top: 0;">Message</h3>
-            <p style="white-space: pre-wrap; line-height: 1.6;">${message}</p>
-          </div>
-          
-          <div style="margin-top: 20px; padding: 15px; background-color: #e9ecef; border-radius: 8px; font-size: 14px; color: #6c757d;">
-            <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
-            <p><strong>From:</strong> Mosaic Sport Capital Contact Form</p>
-          </div>
-        </div>
-      `,
-      text: `
-New Contact Form Submission
-
-Contact Details:
-- Name: ${name}
-- Email: ${email}
-- Subject: ${subject}
-
-Message:
-${message}
-
-Submitted: ${new Date().toLocaleString()}
-From: Mosaic Sport Capital Contact Form
-      `,
+    // Create email message for Graph API
+    const emailMessage = {
+      message: {
+        subject: `Contact Form: ${subject}`,
+        body: {
+          contentType: 'HTML',
+          content: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
+                New Contact Form Submission
+              </h2>
+              
+              <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3 style="color: #495057; margin-top: 0;">Contact Details</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Subject:</strong> ${subject}</p>
+              </div>
+              
+              <div style="background-color: #ffffff; padding: 20px; border: 1px solid #dee2e6; border-radius: 8px;">
+                <h3 style="color: #495057; margin-top: 0;">Message</h3>
+                <p style="white-space: pre-wrap; line-height: 1.6;">${message}</p>
+              </div>
+              
+              <div style="margin-top: 20px; padding: 15px; background-color: #e9ecef; border-radius: 8px; font-size: 14px; color: #6c757d;">
+                <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
+                <p><strong>From:</strong> Mosaic Sport Capital Contact Form</p>
+              </div>
+            </div>
+          `
+        },
+        toRecipients: recipients.map(recipient => ({
+          emailAddress: {
+            address: recipient
+          }
+        })),
+        from: {
+          emailAddress: {
+            address: process.env.EMAIL_FROM || process.env.EMAIL_USER
+          }
+        }
+      },
+      saveToSentItems: true
     }
 
-    // Send email
-    const result = await transporter.sendMail(mailOptions)
-    
-    console.log('Email sent successfully:', result.messageId)
-    return { success: true, message: 'Email sent successfully', messageId: result.messageId }
+    // Send email using Graph API
+    const graphResponse = await fetch('https://graph.microsoft.com/v1.0/users/' + process.env.EMAIL_USER + '/sendMail', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(emailMessage)
+    })
+
+    if (!graphResponse.ok) {
+      const errorText = await graphResponse.text()
+      throw new Error(`Graph API request failed: ${graphResponse.status} ${graphResponse.statusText} - ${errorText}`)
+    }
+
+    console.log('Email sent successfully via Graph API')
+    return { success: true, message: 'Email sent successfully via Graph API' }
 
   } catch (error) {
-    console.error('Nodemailer error:', error)
+    console.error('Graph API error:', error)
     return { success: false, message: 'Failed to send email', error: error }
   }
 }
