@@ -254,7 +254,6 @@ export default function HomePage() {
           }}
         />
         <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center font-serif max-w-[90%] px-4"
           style={{
             position: "absolute",
             top: "50%",
@@ -267,9 +266,8 @@ export default function HomePage() {
           }}
         >
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 tracking-tight"
             style={{
-              fontSize: "clamp(1.5rem, 4vw, 3.5rem)",
+              fontSize: "clamp(1.8rem, 5vw, 4rem)",
               margin: 0,
               color: "#FFFFFF",
               fontWeight: "bold",
