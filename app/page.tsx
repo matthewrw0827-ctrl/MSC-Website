@@ -328,10 +328,13 @@ export default function HomePage() {
 
             <div className="bg-background/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200">
               <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-lg sm:text-2xl font-serif font-bold text-white bg-primary w-full h-full rounded-full flex items-center justify-center">
-                    M
-                  </span>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
+                  <img 
+                    src="/Matthew.Photo.jpg" 
+                    alt="Matthew Walzer" 
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: "center 8%", transform: "scale(1.6)" }}
+                  />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-1 sm:mb-2">Matthew Walzer</h3>
