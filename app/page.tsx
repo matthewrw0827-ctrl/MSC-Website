@@ -170,13 +170,12 @@ export default function HomePage() {
           controls={false}
           preload="auto"
           poster="/tel-aviv-coastline-new.jpg"
-          webkit-playsinline="true"
+          webkit-playsinline
           x5-video-player-type="h5"
           x5-video-player-fullscreen="true"
-          x5-video-orientation="portraint"
+          x5-video-orientation="portrait"
           disablePictureInPicture
           disableRemotePlayback
-          playsInline={true}
           data-setup="{}"
           className="video-background hidden sm:block"
           style={{
@@ -194,7 +193,7 @@ export default function HomePage() {
           }}
         >
           <source
-            src="https://www.dropbox.com/scl/fi/hlmandn981pjq57yz6r92/18809689-uhd_3840_2160_30fps.mp4?rlkey=YOUR_KEY&dl=1"
+            src="https://www.dropbox.com/scl/fi/hlmandn981pjq57yz6r92/18809689-uhd_3840_2160_30fps.mp4?rlkey=pgng7qblvtxs8uoji937d69g0&st=d1wenn6x&dl=1"
             type="video/mp4"
           />
           <span style={{ color: "#F7F6F3" }}>Your browser does not support the video tag.</span>
