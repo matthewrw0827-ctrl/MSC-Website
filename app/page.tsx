@@ -150,32 +150,6 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
-      <nav className="absolute top-0 right-0 z-50 p-3 sm:hidden">
-        <div className="flex flex-col items-end gap-2">
-          <button
-            onClick={() => scrollToSection("about")}
-            className="text-white font-medium hover:text-accent transition-colors text-xs"
-            style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("approach")}
-            className="text-white font-medium hover:text-accent transition-colors text-xs"
-            style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
-          >
-            Approach
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="bg-white/20 backdrop-blur-sm px-2 py-1 rounded-lg text-white font-medium hover:bg-white/30 transition-all text-xs"
-            style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
-          >
-            Contact
-          </button>
-        </div>
-      </nav>
 
       {/* Hero Section with Video Background */}
       <div
