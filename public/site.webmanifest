@@ -4,17 +4,22 @@
   "description": "Private advisory in legacy sport acquisitions. Connecting diaspora capital with Israeli football opportunities.",
   "icons": [
     {
-      "src": "/favicon-16x16.png",
+      "src": "/Mosaic Logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "/Mosaic Logo.png",
       "sizes": "16x16",
       "type": "image/png"
     },
     {
-      "src": "/favicon-32x32.png",
+      "src": "/Mosaic Logo.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/Mosaic Logo.png",
       "sizes": "180x180",
       "type": "image/png"
     }
