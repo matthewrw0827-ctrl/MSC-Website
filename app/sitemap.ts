@@ -11,6 +11,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 1,
     },
+    // Favicon references
+    {
+      url: `${baseUrl}/favicon.ico`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.1,
+    },
+    {
+      url: `${baseUrl}/Mosaic Logo.png`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.1,
+    },
     {
       url: `${baseUrl}/#about`,
       lastModified: new Date(),
