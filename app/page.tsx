@@ -116,7 +116,7 @@ export default function HomePage() {
               className="text-sm sm:text-lg lg:text-2xl font-serif font-bold text-white leading-tight"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.8)" }}
             >
-              <span className="hidden sm:inline">Mosaic Sport Capital LLC</span>
+              <span className="hidden sm:inline">Mosaic Sport Capital</span>
               <span className="sm:hidden">Mosaic Sport Capital</span>
             </h1>
           </div>
