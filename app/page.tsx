@@ -102,15 +102,13 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <header className="absolute top-0 left-0 z-50 p-3 sm:p-6">
-        <div className="flex items-center gap-2 sm:gap-4">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-md border border-white/30 shadow-lg">
-            <img 
-              src="/Mosaic Logo.png" 
-              alt="Mosaic Sport Capital Logo" 
-              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 object-contain drop-shadow-lg"
-            />
-          </div>
+      <header className="absolute top-0 left-0 z-50 p-4 sm:p-6">
+        <div className="flex items-center gap-0.5 sm:gap-1">
+          <img 
+            src="/Mosaic Logo.png" 
+            alt="Mosaic Sport Capital Logo" 
+            className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain"
+          />
           <div>
             <h1
               className="text-sm sm:text-lg lg:text-2xl font-serif font-bold text-white leading-tight"
