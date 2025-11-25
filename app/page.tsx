@@ -288,13 +288,7 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
-                Daniel studies at Washington University in St. Louis pursuing a multidisciplinary education in Business
-                and Jewish, Islamic & Middle Eastern Studies. He brings significant leadership experience within the
-                global Jewish community, having served as Aleph Godol (International President) of BBYO and engaging
-                with a plethora of Jewish non-profit organizations including JNF, AIPAC, ADL and more. His work sits at
-                the intersection of pluralistic Jewish engagement, institutional strategy, and community capital. He
-                approaches every deal through the lens of alignment, development, and long-term cultural fit shaped by
-                deep-rooted perspective.
+                Daniel works across strategy, governance, and stakeholder coordination within football and institutional environments. In addition to operational leadership roles across multiple organizations, he brings extensive relationships and deep familiarity with American Jewish communal networks, informed by years of involvement across institutions such as AIPAC, ADL, and other national Jewish leadership bodies. This background gives him a rare ability to navigate diaspora engagement, investor alignment, and cross-cultural stakeholder management. He is currently studying at Washington University in St. Louis.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
                 <a
@@ -325,12 +319,7 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
-                Matthew attends Bocconi University in Milan, one of Europe's premier institutions for economics and
-                finance. He co-founded Students for International Football Finance (SIFF), the first student-led society
-                in the field, giving him access to the football business space and building a global network of industry
-                practitioners. He has worked directly on both buy-side and sell-side football transactions across
-                European markets, supporting deal research, market mapping, and valuation modelling. His focus is on
-                cross-border club acquisition, legacy asset positioning, and aligning capital with narrative.
+                Matthew focuses on cross-border football transactions, valuation work, and investor–club analysis. Through leading Students for International Football Finance, an international organization that collaborates with advisory firms and investors, he has worked closely with BlackBridge Sports and Matix Capital on M&A research, deal preparation, valuation analysis, and strategic market mapping. His experience includes supporting transaction research, facilitating investor–operator communication, and contributing to assessments of club acquisition and ownership structures. He is currently studying at Bocconi University in Milan.
               </p>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
