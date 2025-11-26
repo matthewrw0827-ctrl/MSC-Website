@@ -261,13 +261,13 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6">Who We Are</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4">
-              Mosaic Sport Capital LLC is a private advisory boutique dedicated to facilitating strategic ownership in Israeli football. Founded by American Jewish entrepreneurs with a shared commitment to Israel, sport, and investment, we work with individuals who view club ownership as a long-term investment in both identity and
-              infrastructure, one that strengthens Israeli sport as a whole. Our mission is to foster meaningful
-              connections between global Jewish capital and enduring institutions in Israel, building vehicles for
-              legacy, alignment, and sustained impact.
+              Mosaic Sport Capital LLC is a private advisory boutique focused on guiding Israeli football clubs through investment exploration, ownership transitions, and strategic partnership processes. We work closely with ownership groups and executives seeking structured, discreet, and informed support as they engage with prospective investors.
             </p>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed italic px-4">
-              We understand that some investments transcend numbers, they touch the soul.
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4">
+              Our advantage lies in our understanding of both the Israeli football landscape and the global Jewish communities that care deeply about its future. We bring a culturally informed perspective, paired with analytical rigor and international familiarity, allowing us to bridge conversations that are often difficult for clubs to initiate or manage alone.
+            </p>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4">
+              We prioritize long-term alignment, disciplined preparation, and clear communication to ensure that any potential investment is approached thoughtfully and strategically.
             </p>
           </div>
 
