@@ -403,7 +403,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6">Contact Us</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Ready to explore opportunities in Israeli football? We'd love to hear from you.
+            If you would like to discuss potential investment or partnership considerations in Israeli football, please reach out.
             </p>
           </div>
 
@@ -438,7 +438,7 @@ export default function HomePage() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm sm:text-base"
-                    placeholder="Your full name"
+                    placeholder="Full name"
                   />
                 </div>
                 <div>
@@ -453,7 +453,7 @@ export default function HomePage() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm sm:text-base"
-                    placeholder="your@email.com"
+                    placeholder="Email address"
                   />
                 </div>
               </div>
@@ -470,7 +470,7 @@ export default function HomePage() {
                   onChange={handleInputChange}
                   required
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm sm:text-base"
-                  placeholder="What would you like to discuss?"
+                  placeholder="Reason for contacting us"
                 />
               </div>
 
@@ -486,7 +486,7 @@ export default function HomePage() {
                   required
                   rows={4}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none text-sm sm:text-base"
-                  placeholder="We look forward to your message..."
+                  placeholder="How can we assist you?"
                 ></textarea>
               </div>
 
@@ -496,7 +496,7 @@ export default function HomePage() {
                   disabled={isSubmitting}
                   className="bg-primary text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
                 </button>
               </div>
             </form>
