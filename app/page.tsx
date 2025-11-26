@@ -249,7 +249,7 @@ export default function HomePage() {
               padding: "0 1rem",
             }}
           >
-            Connecting the diaspora to Israeli football
+            Strategic Advisory for Investment in Israeli Football
           </h1>
         </div>
       </div>
