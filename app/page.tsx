@@ -338,79 +338,60 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How We Work Section */}
+      {/* Approach Section */}
       <section id="approach" className="py-12 sm:py-20 px-4 sm:px-6 bg-background">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6">How We Work</h2>
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6">Approach</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Three principles guide every engagement we undertake.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4 leading-relaxed">
+              Our process is structured to ensure thorough preparation, strategic alignment, and thoughtful execution at every stage.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 h-full">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4 sm:mb-6">Discretion</h3>
-              <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                <p>• We don't promote mandates or publish opportunities online</p>
-                <p>• Everything moves through quiet, trusted, private introductions</p>
-                <p>• All conversations are confidential before, during, and after</p>
-              </div>
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8" style={{ gridAutoRows: '1fr' }}>
+            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 flex flex-col h-full">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4 sm:mb-6">Step 1: Evaluation and Understanding</h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
+                We begin by developing a clear picture of the club's financial position, operational context, and strategic objectives. This early assessment allows us to understand ownership priorities, constraints, and the types of investors who may be the right fit.
+              </p>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <li>• Clarification of goals, expectations, and sensitivities</li>
+                <li>• Initial identification of aligned investor profiles</li>
+              </ul>
             </div>
 
-            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 h-full">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8.5 12c0 2.5 2 4.5 4.5 4.5s4.5-2 4.5-4.5-2-4.5-4.5-4.5S8.5 9.5 8.5 12z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 12c0-2.5 2-4.5 4.5-4.5S12 9.5 12 12s-2 4.5-4.5 4.5S3 14.5 3 12z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4 sm:mb-6">Continuity</h3>
-              <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                <p>• Ownership carries memory, identity, and long-term strategic value</p>
-                <p>• We work with those who see legacy as active stewardship</p>
-                <p>• Clubs are treated as cultural assets, not just commodities</p>
-              </div>
+            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 flex flex-col h-full">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4 sm:mb-6">Step 2: Preparation and Positioning</h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
+                Before engaging investors, we prepare structured materials and organize the information needed to present the club clearly and professionally. This ensures early conversations begin from a position of clarity, credibility, and alignment.
+              </p>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <li>• Strategic narrative and positioning</li>
+                <li>• Organized financial and operational information</li>
+              </ul>
             </div>
 
-            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 h-full">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4 sm:mb-6">Alignment</h3>
-              <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                <p>• We partner with clients who share our values and vision</p>
-                <p>• Identity and intention are at the core of every deal</p>
-                <p>• We prioritize cultural fit over speed or transactional flash</p>
-              </div>
+            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 flex flex-col h-full">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4 sm:mb-6">Step 3: Targeted Outreach</h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
+                We conduct discreet, direct outreach through private channels, focusing on investors who match the club's objectives and long-term vision. All outreach is curated, confidential, and based on pre-established alignment.
+              </p>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <li>• Confidential engagement through trusted networks</li>
+                <li>• Curated introductions and early interest assessment</li>
+              </ul>
+            </div>
+
+            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 flex flex-col h-full">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4 sm:mb-6">Step 4: Facilitation and Support</h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
+                As interest develops, we structure conversations and support ownership in evaluating proposals, potential structures, and long-term implications. Our role is to keep discussions productive, organized, and aligned with the club's priorities.
+              </p>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <li>• Management of communication flow and prioritization</li>
+                <li>• Assessment of proposals, structure, and long-term fit</li>
+              </ul>
             </div>
           </div>
         </div>
