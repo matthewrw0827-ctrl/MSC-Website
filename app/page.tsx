@@ -177,6 +177,7 @@ export default function HomePage() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
+            brightness: "0.5",
             objectPosition: "40% center",
             zIndex: 1,
             pointerEvents: "none",
