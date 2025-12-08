@@ -110,8 +110,8 @@ export default function HomePage() {
             textShadow: "2px 4px 10px rgba(0,0,0,0.9), 0px 2px 4px rgba(0,0,0,0.8)",
           }}
         >
-          <span className="hidden sm:inline">Mosaic Sport Capital</span>
-          <span className="sm:hidden">Mosaic Sport Capital</span>
+          <span className="hidden sm:inline"> </span>
+          <span className="sm:hidden"> </span>
         </h1>
       </header>
 
