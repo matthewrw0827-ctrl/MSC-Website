@@ -103,22 +103,16 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <header className="absolute top-0 left-0 z-50 p-4 sm:p-6">
-        <div className="flex items-center gap-0.5 sm:gap-1">
-          <img 
-            src="/Mosaic Logo.png" 
-            alt="Mosaic Sport Capital Logo" 
-            className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain"
-          />
-          <div>
-            <h1
-              className="text-sm sm:text-lg lg:text-2xl font-serif font-bold text-white leading-tight"
-              style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.8)" }}
-            >
-              <span className="hidden sm:inline">Mosaic Sport Capital</span>
-              <span className="sm:hidden">Mosaic Sport Capital</span>
-            </h1>
-          </div>
-        </div>
+        <h1
+          className="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight"
+          style={{ 
+            fontFamily: "'Perpetua', 'Perpetua Titling MT', 'EB Garamond', 'Times New Roman', serif",
+            textShadow: "2px 4px 10px rgba(0,0,0,0.9), 0px 2px 4px rgba(0,0,0,0.8)",
+          }}
+        >
+          <span className="hidden sm:inline">Mosaic Sport Capital</span>
+          <span className="sm:hidden">Mosaic Sport Capital</span>
+        </h1>
       </header>
 
       {/* Desktop Navigation */}
