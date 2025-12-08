@@ -177,7 +177,7 @@ export default function HomePage() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            brightness: "0.5",
+            filter: "brightness(0.6)",
             objectPosition: "40% center",
             zIndex: 1,
             pointerEvents: "none",
@@ -240,7 +240,7 @@ export default function HomePage() {
               lineHeight: "1.1",
               marginBottom: "1.5rem",
               letterSpacing: "-0.02em",
-              textShadow: "2px 4px 12px rgba(0,0,0,0.8), 0px 2px 4px rgba(0,0,0,0.6)",
+              textShadow: "0 4px 24px rgba(0,0,0,0.5)",
               padding: "0 1rem",
             }}
           >
