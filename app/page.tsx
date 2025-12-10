@@ -256,7 +256,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6">Who We Are</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4">
-              Mosaic Sport Capital LLC is a private advisory boutique focused on guiding Israeli football clubs through investment exploration, ownership transitions, and strategic partnership processes. We work closely with ownership groups and executives seeking structured, discreet, and informed support as they engage with prospective investors.
+              Mosaic Sport Capital is a private advisory boutique focused on guiding Israeli football clubs through investment exploration, ownership transitions, and strategic partnership processes. We work closely with ownership groups and executives seeking structured, discreet, and informed support as they engage with prospective investors.
             </p>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4">
               Our advantage lies in our understanding of both the Israeli football landscape and the global Jewish communities that care deeply about its future. We bring a culturally informed perspective, paired with analytical rigor and international familiarity, allowing us to bridge conversations that are often difficult for clubs to initiate or manage alone.
