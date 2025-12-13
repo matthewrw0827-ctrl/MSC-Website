@@ -283,7 +283,7 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
-                Daniel works across strategy, governance, and stakeholder coordination within football and institutional environments. In addition to operational leadership roles across multiple organizations, he brings extensive relationships and deep familiarity with American Jewish communal networks, informed by years of involvement across institutions such as AIPAC, ADL, and other national Jewish leadership bodies. This background gives him a rare ability to navigate diaspora engagement, investor alignment, and cross-cultural stakeholder management. He is currently studying at Washington University in St. Louis.
+                Daniel works across strategy, governance, and stakeholder coordination within football and institutional environments. In addition to operational leadership roles across multiple organizations, he brings extensive relationships and deep familiarity with American Jewish communal networks, informed by years of involvement across institutions such as BBYO, JNF, and other national Jewish leadership bodies. This background gives him a rare ability to navigate diaspora engagement, investor alignment, and cross-cultural stakeholder management. He is currently studying at Washington University in St. Louis.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
                 <a
