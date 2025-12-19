@@ -118,6 +118,20 @@ export default function HomePage() {
       {/* Desktop Navigation */}
       <nav className="absolute top-0 right-0 z-50 p-3 sm:p-6 hidden sm:block">
         <div className="flex items-center gap-2 sm:gap-4">
+          <span 
+            className="msc-logo"
+            style={{
+              fontFamily: "'Perpetua', 'Perpetua Titling MT', 'EB Garamond', 'Times New Roman', serif",
+              fontSize: '22px',
+              fontWeight: 400,
+              color: '#FFFFFF',
+              marginRight: '32px',
+              lineHeight: 1,
+              textShadow: "1px 2px 4px rgba(0,0,0,0.8)",
+            }}
+          >
+            MSC
+          </span>
           <button
             onClick={() => scrollToSection("about")}
             className="text-white font-medium hover:text-accent transition-colors text-sm sm:text-base"
@@ -520,11 +534,17 @@ export default function HomePage() {
       </section>
 
       {/* Legal Footer */}
-      <footer className="py-8 sm:py-12 px-4 sm:px-6 bg-muted border-t border-border">
+      <footer className="pt-12 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 bg-muted border-t border-border/30">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs sm:text-sm text-muted-foreground px-4">
-            Mosaic Sport Capital LLC is a private advisory firm. Inquiries and engagements are handled discreetly and by
-            invitation.
+          <div className="mb-6 sm:mb-8 flex justify-center">
+            <img 
+              src="/Mosaic_Wordform-removebg-preview.png" 
+              alt="Mosaic Sport Capital" 
+              className="h-8 sm:h-12 w-auto opacity-80"
+            />
+          </div>
+          <p className="text-[10px] sm:text-xs text-muted-foreground/70 px-4 font-light leading-relaxed">
+            Mosaic Sport Capital LLC is a private advisory firm. Inquiries and engagements are handled discreetly and in confidence.
           </p>
         </div>
       </footer>
