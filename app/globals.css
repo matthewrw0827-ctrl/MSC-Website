@@ -4,26 +4,26 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to Mediterranean/Tel Aviv architecture aesthetic - warm stone whites, soft blues, natural limestone */
-  --background: #f8f6f0; /* Warm limestone white */
-  --foreground: #2c3e50; /* Deep Mediterranean blue-gray */
+  /* Updated to sharp, authoritative design with pure white backgrounds and navy typography */
+  --background: #ffffff; /* Pure white */
+  --foreground: #1a2332; /* Dark navy for section headers and key text */
   --card: #ffffff; /* Pure white for cards */
-  --card-foreground: #2c3e50; /* Deep blue-gray for card text */
+  --card-foreground: #1a2332; /* Dark navy for card text */
   --popover: #ffffff; /* White for popovers */
-  --popover-foreground: #2c3e50; /* Deep blue-gray for popover text */
-  --primary: #34495e; /* Mediterranean stone blue */
+  --popover-foreground: #1a2332; /* Dark navy for popover text */
+  --primary: #1a2332; /* Dark navy */
   --primary-foreground: #ffffff; /* White text on primary */
-  --secondary: #7fb3d3; /* Soft Mediterranean blue */
-  --secondary-foreground: #2c3e50; /* Dark text on secondary */
-  --muted: #ecf0f1; /* Light stone gray */
-  --muted-foreground: #5d6d7e; /* Muted blue-gray */
-  --accent: #5dade2; /* Mediterranean sky blue */
-  --accent-foreground: #2c3e50; /* Dark text on accent */
-  --destructive: #e74c3c; /* Mediterranean terracotta red */
+  --secondary: #34495e; /* Medium blue-gray */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #ffffff; /* Pure white for footer */
+  --muted-foreground: #2c3e50; /* Darker blue-gray for body text - increased contrast */
+  --accent: #5dade2; /* Light blue accent - limited use only */
+  --accent-foreground: #1a2332; /* Dark navy text on accent */
+  --destructive: #e74c3c; /* Red for errors */
   --destructive-foreground: #ffffff; /* White text on destructive */
-  --border: #bdc3c7; /* Light stone border */
+  --border: #d1d5db; /* Medium gray border for better contrast */
   --input: #ffffff; /* White for inputs */
-  --ring: #5dade2; /* Sky blue for focus rings */
+  --ring: #1a2332; /* Dark navy for focus rings */
   --chart-1: #5dade2;
   --chart-2: #34495e;
   --chart-3: #7fb3d3;
