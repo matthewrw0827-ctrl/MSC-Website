@@ -236,25 +236,28 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Section Divider */}
+      <div className="h-px bg-border"></div>
+
       {/* Who We Are Section */}
-      <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 bg-card">
+      <section id="about" className="py-12 sm:py-20 px-4 sm:px-6 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Who We Are</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
-            <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4" style={{ color: '#2c3e50' }}>
+            <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4" style={{ color: '#1e293b' }}>
               Mosaic Sport Capital is a private advisory boutique focused on guiding Israeli football clubs through investment exploration, ownership transitions, and strategic partnership processes. We work closely with ownership groups and executives seeking structured, discreet, and informed support as they engage with prospective investors.
             </p>
-            <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4" style={{ color: '#2c3e50' }}>
+            <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4" style={{ color: '#1e293b' }}>
               Our advantage lies in our understanding of both the Israeli football landscape and the global Jewish communities that care deeply about its future. We bring a culturally informed perspective, paired with analytical rigor and international familiarity, allowing us to bridge conversations that are often difficult for clubs to initiate or manage alone.
             </p>
-            <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4" style={{ color: '#2c3e50' }}>
+            <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4" style={{ color: '#1e293b' }}>
               We prioritize long-term alignment, disciplined preparation, and clear communication to ensure that any potential investment is approached thoughtfully and strategically.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-200">
+            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border-2 border-border shadow-md hover:shadow-lg transition-all duration-200">
               <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
                   <img 
@@ -269,14 +272,14 @@ export default function HomePage() {
                   <p className="font-medium text-sm sm:text-base" style={{ color: '#1a2332' }}>Co-Founder</p>
                 </div>
               </div>
-              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#2c3e50' }}>
+              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#1e293b' }}>
                 Daniel works across strategy, governance, and stakeholder coordination within football and institutional environments. In addition to operational leadership roles across multiple organizations, he brings extensive relationships and deep familiarity with American Jewish communal networks, informed by years of involvement across institutions such as BBYO, JNF, and other national Jewish leadership bodies. This background gives him a rare ability to navigate diaspora engagement, investor alignment, and cross-cultural stakeholder management. He is currently studying at Washington University in St. Louis.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
                 <a
                   href="mailto:dan.mezistrano@mosaicsportcapital.com"
                   className="flex items-center gap-2 transition-colors duration-200 group"
-                  style={{ color: '#2c3e50' }}
+                  style={{ color: '#1e293b' }}
                 >
                   <svg className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -286,7 +289,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-200">
+            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border-2 border-border shadow-md hover:shadow-lg transition-all duration-200">
               <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
                   <img 
@@ -301,7 +304,7 @@ export default function HomePage() {
                   <p className="font-medium text-sm sm:text-base" style={{ color: '#1a2332' }}>Co-Founder</p>
                 </div>
               </div>
-              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#2c3e50' }}>
+              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#1e293b' }}>
                 Matthew focuses on cross-border football transactions, valuation work, and investor–club analysis. Through leading Students for International Football Finance, an international organization that collaborates with advisory firms and investors, he has worked closely with BlackBridge Sports and Matix Capital on M&A research, deal preparation, valuation analysis, and strategic market mapping. His experience includes supporting transaction research, facilitating investor–operator communication, and contributing to assessments of club acquisition and ownership structures. He is currently studying at Bocconi University in Milan.
               </p>
 
@@ -309,7 +312,7 @@ export default function HomePage() {
                 <a
                   href="mailto:matthew.walzer@mosaicsportcapital.com"
                   className="flex items-center gap-2 transition-colors duration-200 group"
-                  style={{ color: '#2c3e50' }}
+                  style={{ color: '#1e293b' }}
                 >
                   <svg className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -322,13 +325,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="h-px bg-border"></div>
+
       {/* Approach Section */}
       <section id="approach" className="py-12 sm:py-20 px-4 sm:px-6 bg-card">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 sm:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Approach</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
-            <p className="text-base sm:text-lg max-w-3xl mx-auto px-4 leading-relaxed" style={{ color: '#2c3e50' }}>
+            <p className="text-base sm:text-lg max-w-3xl mx-auto px-4 leading-relaxed" style={{ color: '#1e293b' }}>
               Our process is structured to ensure thorough preparation, strategic alignment, and thoughtful execution at every stage.
             </p>
           </div>
@@ -336,43 +342,43 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8" style={{ gridAutoRows: '1fr' }}>
             <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-200 flex flex-col h-full">
               <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Step 1: Evaluation and Understanding</h3>
-              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#2c3e50' }}>
+              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#1e293b' }}>
                 We begin by developing a clear picture of the club's financial position, operational context, and strategic objectives. This early assessment allows us to understand ownership priorities, constraints, and the types of investors who may be the right fit.
               </p>
-              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed" style={{ color: '#2c3e50' }}>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed" style={{ color: '#1e293b' }}>
                 <li>• Clarification of goals, expectations, and sensitivities</li>
                 <li>• Initial identification of aligned investor profiles</li>
               </ul>
             </div>
 
-            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 flex flex-col h-full">
+            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border-2 border-border shadow-md hover:shadow-lg transition-all duration-200 flex flex-col h-full">
               <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Step 2: Preparation and Positioning</h3>
-              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#2c3e50' }}>
+              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#1e293b' }}>
                 Before engaging investors, we prepare structured materials and organize the information needed to present the club clearly and professionally. This ensures early conversations begin from a position of clarity, credibility, and alignment.
               </p>
-              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed" style={{ color: '#2c3e50' }}>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed" style={{ color: '#1e293b' }}>
                 <li>• Strategic narrative and positioning</li>
                 <li>• Organized financial and operational information</li>
               </ul>
             </div>
 
-            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 flex flex-col h-full">
+            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border-2 border-border shadow-md hover:shadow-lg transition-all duration-200 flex flex-col h-full">
               <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Step 3: Targeted Outreach</h3>
-              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#2c3e50' }}>
+              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#1e293b' }}>
                 We conduct discreet, direct outreach through private channels, focusing on investors who match the club's objectives and long-term vision. All outreach is curated, confidential, and based on pre-established alignment.
               </p>
-              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed" style={{ color: '#2c3e50' }}>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed" style={{ color: '#1e293b' }}>
                 <li>• Confidential engagement through trusted networks</li>
                 <li>• Curated introductions and early interest assessment</li>
               </ul>
             </div>
 
-            <div className="bg-card/50 p-4 sm:p-6 lg:p-8 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-200 flex flex-col h-full">
+            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border-2 border-border shadow-md hover:shadow-lg transition-all duration-200 flex flex-col h-full">
               <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Step 4: Facilitation and Support</h3>
-              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#2c3e50' }}>
+              <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#1e293b' }}>
                 As interest develops, we structure conversations and support ownership in evaluating proposals, potential structures, and long-term implications. Our role is to keep discussions productive, organized, and aligned with the club's priorities.
               </p>
-              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed" style={{ color: '#2c3e50' }}>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed" style={{ color: '#1e293b' }}>
                 <li>• Management of communication flow and prioritization</li>
                 <li>• Assessment of proposals, structure, and long-term fit</li>
               </ul>
@@ -381,17 +387,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 bg-card">
+      {/* Section Divider */}
+      <div className="h-px bg-border"></div>
+
+      <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Contact Us</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
-            <p className="text-base sm:text-lg max-w-2xl mx-auto px-4" style={{ color: '#2c3e50' }}>
+            <p className="text-base sm:text-lg max-w-2xl mx-auto px-4" style={{ color: '#1e293b' }}>
             If you would like to discuss potential investment or partnership considerations in Israeli football, please reach out.
             </p>
           </div>
 
-          <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border border-border shadow-sm">
+          <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border-2 border-border shadow-md">
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                 <p className="text-green-800 font-medium">
@@ -487,7 +496,7 @@ export default function HomePage() {
             </form>
 
             <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border text-center">
-              <p className="text-sm sm:text-base mb-3 sm:mb-4" style={{ color: '#2c3e50' }}>Or reach us directly:</p>
+              <p className="text-sm sm:text-base mb-3 sm:mb-4" style={{ color: '#1e293b' }}>Or reach us directly:</p>
               <div>
                 <a
                   href="mailto:contact@mosaicsportcapital.com"
@@ -510,10 +519,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="h-px bg-border"></div>
+
       {/* Legal Footer */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 bg-muted border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xs sm:text-sm px-4" style={{ color: '#2c3e50' }}>
+            <p className="text-xs sm:text-sm px-4" style={{ color: '#1e293b' }}>
             Mosaic Sport Capital LLC is a private advisory firm. Inquiries and engagements are handled discreetly and in confidence.
           </p>
         </div>

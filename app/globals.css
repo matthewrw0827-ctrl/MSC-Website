@@ -4,10 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to sharp, authoritative design with pure white backgrounds and navy typography */
-  --background: #ffffff; /* Pure white */
+  /* Refined design with alternating neutral backgrounds and enhanced contrast */
+  --background: #fafafa; /* Very light neutral for alternating sections */
   --foreground: #1a2332; /* Dark navy for section headers and key text */
-  --card: #ffffff; /* Pure white for cards */
+  --card: #ffffff; /* Pure white reserved for key content sections */
   --card-foreground: #1a2332; /* Dark navy for card text */
   --popover: #ffffff; /* White for popovers */
   --popover-foreground: #1a2332; /* Dark navy for popover text */
@@ -15,13 +15,13 @@
   --primary-foreground: #ffffff; /* White text on primary */
   --secondary: #34495e; /* Medium blue-gray */
   --secondary-foreground: #ffffff; /* White text on secondary */
-  --muted: #ffffff; /* Pure white for footer */
-  --muted-foreground: #2c3e50; /* Darker blue-gray for body text - increased contrast */
+  --muted: #fafafa; /* Very light neutral for footer */
+  --muted-foreground: #1e293b; /* Darker body text for better contrast and authority */
   --accent: #5dade2; /* Light blue accent - limited use only */
   --accent-foreground: #1a2332; /* Dark navy text on accent */
   --destructive: #e74c3c; /* Red for errors */
   --destructive-foreground: #ffffff; /* White text on destructive */
-  --border: #d1d5db; /* Medium gray border for better contrast */
+  --border: #cbd5e1; /* Slightly stronger border for better card definition */
   --input: #ffffff; /* White for inputs */
   --ring: #1a2332; /* Dark navy for focus rings */
   --chart-1: #5dade2;
