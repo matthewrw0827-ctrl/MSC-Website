@@ -334,9 +334,6 @@ export default function HomePage() {
           <div className="text-center mb-16 sm:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Approach</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
-            <p className="text-base sm:text-lg max-w-3xl mx-auto px-4 leading-relaxed" style={{ color: '#1e293b' }}>
-              Our process is structured to ensure thorough preparation, strategic alignment, and thoughtful execution at every stage.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8" style={{ gridAutoRows: '1fr' }}>
@@ -387,17 +384,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section Divider */}
-      <div className="h-px bg-border"></div>
-
       <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Contact Us</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
-            <p className="text-base sm:text-lg max-w-2xl mx-auto px-4" style={{ color: '#1e293b' }}>
-            If you would like to discuss potential investment or partnership considerations in Israeli football, please reach out.
-            </p>
           </div>
 
           <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border-2 border-border shadow-md">
@@ -518,9 +509,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Section Divider */}
-      <div className="h-px bg-border"></div>
 
       {/* Legal Footer */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 bg-muted border-t border-border">
