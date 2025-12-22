@@ -102,41 +102,53 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Desktop Navigation */}
-      <nav className="absolute top-0 right-0 z-50 p-3 sm:p-6 hidden sm:block">
-        <div className="flex items-center gap-2 sm:gap-4">
-          <button
-            onClick={() => scrollToSection("about")}
-            className="text-white font-medium hover:text-white/80 transition-colors text-sm sm:text-base"
-            style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("approach")}
-            className="text-white font-medium hover:text-white/80 transition-colors text-sm sm:text-base"
-            style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
-          >
-            Approach
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="bg-white/20 backdrop-blur-sm px-2 py-1 sm:px-4 sm:py-2 rounded-lg text-white font-medium hover:bg-white/30 transition-all text-sm sm:text-base"
-            style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.8)" }}
-          >
-            Contact
-          </button>
+      {/* Fixed Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border" style={{ height: '64px' }}>
+        <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center h-full py-2">
+            <img 
+              src="/Mosaic_Logo-removebg-preview.png" 
+              alt="Mosaic Sport Capital" 
+              className="h-full w-auto object-contain"
+            />
+          </div>
+          
+          {/* Navigation */}
+          <nav className="flex items-center gap-2 sm:gap-4">
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-foreground font-medium hover:text-foreground/80 transition-colors text-sm sm:text-base"
+              style={{ color: '#1a2332' }}
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("approach")}
+              className="text-foreground font-medium hover:text-foreground/80 transition-colors text-sm sm:text-base"
+              style={{ color: '#1a2332' }}
+            >
+              Approach
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="bg-foreground text-background px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium hover:opacity-90 transition-all text-sm sm:text-base"
+              style={{ backgroundColor: '#1a2332', color: '#F7F6F3' }}
+            >
+              Contact
+            </button>
+          </nav>
         </div>
-      </nav>
-
+      </header>
 
       {/* Hero Section with Video Background */}
       <div
-        className="relative w-full h-screen overflow-hidden"
+        className="relative w-full overflow-hidden"
         style={{
           position: "relative",
           width: "100vw",
-          height: "100vh",
+          height: "calc(100vh - 64px)",
+          marginTop: "64px",
           overflow: "hidden",
         }}
       >
@@ -513,7 +525,14 @@ export default function HomePage() {
       {/* Legal Footer */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 bg-muted border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xs sm:text-sm px-4" style={{ color: '#1e293b' }}>
+          <div className="mb-6 sm:mb-8 flex justify-center">
+            <img 
+              src="/Mosaic_Wordform-removebg-preview.png" 
+              alt="Mosaic Sport Capital" 
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-80"
+            />
+          </div>
+          <p className="text-xs sm:text-sm px-4" style={{ color: '#1e293b' }}>
             Mosaic Sport Capital LLC is a private advisory firm. Inquiries and engagements are handled discreetly and in confidence.
           </p>
         </div>
