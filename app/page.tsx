@@ -524,7 +524,10 @@ export default function HomePage() {
 
       {/* Legal Footer */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 bg-muted border-t border-border">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center space-y-2">
+          <p className="text-xs sm:text-sm font-medium" style={{ color: '#1e293b' }}>
+             W 81st Street, New York City, New York
+          </p>
           <p className="text-xs sm:text-sm px-4" style={{ color: '#1e293b' }}>
             Mosaic Sport Capital LLC is a private advisory firm. Inquiries and engagements are handled discreetly and in confidence.
           </p>
