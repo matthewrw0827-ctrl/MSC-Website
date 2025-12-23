@@ -525,13 +525,6 @@ export default function HomePage() {
       {/* Legal Footer */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 bg-muted border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-6 sm:mb-8 flex justify-center">
-            <img 
-              src="/Mosaic_Wordform-removebg-preview.png" 
-              alt="Mosaic Sport Capital" 
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-80"
-            />
-          </div>
           <p className="text-xs sm:text-sm px-4" style={{ color: '#1e293b' }}>
             Mosaic Sport Capital LLC is a private advisory firm. Inquiries and engagements are handled discreetly and in confidence.
           </p>
