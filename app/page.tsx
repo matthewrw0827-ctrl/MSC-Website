@@ -285,7 +285,7 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#1e293b' }}>
-                Daniel works across strategy, governance, and stakeholder coordination within football and institutional environments. In addition to operational leadership roles across multiple organizations, he brings extensive relationships and deep familiarity with American Jewish communal networks, informed by years of involvement across institutions such as BBYO, JNF, and other national Jewish leadership bodies. This background gives him a rare ability to navigate diaspora engagement, investor alignment, and cross-cultural stakeholder management. He is currently studying at Washington University in St. Louis.
+                Daniel works across strategy, governance, and stakeholder coordination within football and institutional environments. In addition to operational leadership roles across multiple organizations, he brings extensive relationships and deep familiarity with American Jewish communal networks, informed by years of involvement across institutions such as BBYO, JNF, and other national Jewish leadership bodies. This background gives him a rare ability to navigate diaspora engagement, investor alignment, and cross-cultural stakeholder management.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
                 <a
@@ -317,7 +317,7 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6" style={{ color: '#1e293b' }}>
-                Matthew focuses on cross-border football transactions, valuation work, and investor–club analysis. Through leading Students for International Football Finance, an international organization that collaborates with advisory firms and investors, he has worked closely with BlackBridge Sports and Matix Capital on M&A research, deal preparation, valuation analysis, and strategic market mapping. His experience includes supporting transaction research, facilitating investor–operator communication, and contributing to assessments of club acquisition and ownership structures. He is currently studying at Bocconi University in Milan.
+                Matthew focuses on cross-border football transactions, valuation work, and investor–club analysis. Through leading Students for International Football Finance, an international organization that collaborates with advisory firms and investors, he has worked closely with BlackBridge Sports and Matix Capital on M&A research, deal preparation, valuation analysis, and strategic market mapping. His experience includes supporting transaction research, facilitating investor–operator communication, and contributing to assessments of club acquisition and ownership structures.
               </p>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
