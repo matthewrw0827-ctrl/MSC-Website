@@ -258,13 +258,13 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-foreground mb-4 sm:mb-6" style={{ color: '#1a2332' }}>Who We Are</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6 sm:mb-8"></div>
             <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4" style={{ color: '#1e293b' }}>
-              Mosaic Sport Capital is a private advisory boutique focused on guiding Israeli football clubs through investment exploration, ownership transitions, and strategic partnership processes. We work closely with ownership groups and executives seeking structured, discreet, and informed support as they engage with prospective investors.
+              Mosaic Sport Capital is a private advisory boutique that supports Israeli football clubs in navigating investment exploration, ownership transitions, and strategic partnership processes. We work directly with ownership groups and senior executives to structure, manage, and execute investor engagements with clarity, discipline, and discretion.
             </p>
             <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4" style={{ color: '#1e293b' }}>
-              Our advantage lies in our understanding of both the Israeli football landscape and the global Jewish communities that care deeply about its future. We bring a culturally informed perspective, paired with analytical rigor and international familiarity, allowing us to bridge conversations that are often difficult for clubs to initiate or manage alone.
+              Our edge lies in the intersection of familiarity with the Israeli football ecosystem and relationships within global Jewish communities that have both the interest and capacity to engage as long-term partners. This positioning allows us to facilitate credible, culturally fluent conversations that clubs often cannot initiate or sustain independently.
             </p>
             <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-6 px-4" style={{ color: '#1e293b' }}>
-              We prioritize long-term alignment, disciplined preparation, and clear communication to ensure that any potential investment is approached thoughtfully and strategically.
+              We focus on rigorous preparation, investor screening, and clear communication to ensure that engagement with capital is deliberate rather than reactive. Our role is to help clubs assess opportunities, align expectations, and protect long-term institutional integrity as ownership structures evolve.
             </p>
           </div>
 
@@ -524,10 +524,7 @@ export default function HomePage() {
 
       {/* Legal Footer */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 bg-muted border-t border-border">
-        <div className="max-w-4xl mx-auto text-center space-y-2">
-          <p className="text-xs sm:text-sm font-medium" style={{ color: '#1e293b' }}>
-             W 81st Street, New York City, New York
-          </p>
+        <div className="max-w-4xl mx-auto text-center">
           <p className="text-xs sm:text-sm px-4" style={{ color: '#1e293b' }}>
             Mosaic Sport Capital LLC is a private advisory firm. Inquiries and engagements are handled discreetly and in confidence.
           </p>
